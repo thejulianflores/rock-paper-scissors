@@ -14,16 +14,16 @@ This project is a simple implementation of the game "rock paper scissors."
 
 The finished product will have a play button along with icons representing the choices for rock, paper, and scissors. 
 
-![A mockup of the Rock Paper Scissors game](play.png)
+![A mockup of the Rock Paper Scissors game](img/play.png)
 
 Upon choosing and clicking on one of the three options, the game should tell you what the computer chose.
 
-![Showing what the computer chose](play2.png)
-![Showing what the computer chose](play3.png)
+![Showing what the computer chose](img/play2.png)
+![Showing what the computer chose](img/play3.png)
 
 After a short amount of time, the game will announce the winner.
 
-![Showing the winner](play4.png)
+![Showing the winner](img/play4.png)
 
 Slight animations will be added in future updates.
 
