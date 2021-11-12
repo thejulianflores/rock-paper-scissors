@@ -40,3 +40,22 @@ There will be 3 possible outputs in the game:
 1. A header saying the player won
 2. A header saying the player lost
 3. A header declaring a tie game
+
+# Part 2: Pseudo Code
+
+The logic for the game is as follows:
+```
+When the user clicks the PLAY button
+They will be instructed to choose one of three buttons
+When the user clicks a button
+Their choice is stored
+A random number between 0 and 2 is chosen
+The number is be used to choose Rock, Paper, or Scissors
+If the player chose the winning button
+Then the GUI will display that the player won
+Else if the computer chose the winning button
+Then the GUI will display that the computer won
+Else the GUI will display that there was a tie
+A PLAY AGAIN option will appear on screen
+The GUI is paused until the player hits that button
+```
