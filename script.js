@@ -83,7 +83,7 @@ function game(){
 
     for (let i = 0; i < 5; i++){
         const computerChoice = computerPlay();
-        const playerChoice = prompt('Choose:');
+        const playerChoice = prompt('Choose Rock, Paper, or Scissors:');
 
         outcome = playRound(playerChoice, computerChoice)
 
