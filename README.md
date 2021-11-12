@@ -4,6 +4,8 @@ This project is a simple implementation of the game "rock paper scissors." The o
 
 # Current Version 
 
+[A demo of the website can be found here.](https://thejulianflores.github.io/rock-paper-scissors/)
+
 The current version of the project is in beta. There are 5 total rounds in a game. Each game prompts the user to enter one of the three following choices:
 
 1. Rock
