@@ -1,6 +1,18 @@
 # rock-paper-scissors
 
-This project is a simple implementation of the game "rock paper scissors." 
+This project is a simple implementation of the game "rock paper scissors." The outline for the project can be found [here.](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors)
+
+# Current Version 
+
+The current version of the project is in beta. There are 5 total rounds in a game. Each game prompts the user to enter one of the three following choices:
+
+1. Rock
+2. Paper
+3. Scissors
+
+To see the results of the game, the user must have the console open. 
+
+![The current version of the game](img/JSGame.png)
 
 # Roadmap of the Project
 
