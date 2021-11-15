@@ -8,12 +8,26 @@
         <meta charset="utf-8"/>
     </head>
     <body>
-        <button id='rock'>Rock</button>
-        <button id='paper'>Paper</button>
-        <button id='scissors'>Scissors</button>
-        <div id='playerWins'>Player Score: 0</div>
-        <div id='computerWins'>Computer Score: 0</div>
-        <div id='container'></div>
+        <div id='game-container'>
+            <div id='button-container'>
+                <button id='rock'></button>
+                <button id='paper'></button>
+                <button id='scissors'></button>
+            </div>
+            <div id='text-container'>
+                <div id='scoreboard'>
+                    <div class='scorebox'>
+                        <div class='name'>Player</div>
+                        <div id='playerWins'>0</div>
+                    </div>
+                    <div class='scorebox'>
+                        <div class='name'>Computer</div>
+                        <div id='computerWins'>0</div>
+                    </div>
+                </div>
+                <div id='game-text'></div>
+            </div>
+        </div>  
 
         <script src='script.js'></script>
     </body>
