@@ -14,7 +14,7 @@ The current version of the project is in beta. There are 5 total rounds in a gam
 
 To see the results of the game, the user must have the console open. 
 
-![The current version of the game](img/JSGame.png)
+![The current version of the game](img/JSGame2.png)
 
 # Roadmap of the Project
 
