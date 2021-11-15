@@ -15,10 +15,14 @@ function computerPlay(){
 * Arg2: Computer's Choice
 */
 function playRound(player, computer){
-    player = player.toUpperCase()
-    console.log('Player chose ' + player + ' and computer chose ' + computer)
 
-    if(player==='ROCK'){                // if the player chose ROCK
+    container = document.getElementById('container');
+    message = document.createElement('p')
+    message.textContent = ('Player chose ' + player + ' and computer chose ' + computer)
+
+    container.appendChild(message)
+
+    if(player==='rock'){                // if the player chose ROCK
         if(computer==='Rock'){
             return("tie")
         }
@@ -30,7 +34,7 @@ function playRound(player, computer){
         }
     }
 
-    if(player==='PAPER'){               // if the player chose PAPER
+    if(player==='paper'){               // if the player chose PAPER
         if(computer==='Rock'){
             return("win")
         }
@@ -42,7 +46,7 @@ function playRound(player, computer){
         }
     }
 
-    if(player==='SCISSORS'){            // if the player chose SCISSORS
+    if(player==='scissors'){            // if the player chose SCISSORS
         if(computer==='Rock'){
             return("lose")
         }
@@ -60,14 +64,27 @@ function playRound(player, computer){
 * Function that determines the winner after 5 rounds
 * of play. Returns a string with the winner.
 */
-function chooseWinner(playerWins, computerWins){
+function chooseWinner(outcome){
 
-    if(playerWins > computerWins)
-        return('The player won with a total of ' + playerWins + ' wins!')
-    else if(computerWins > playerWins)
-        return('The computer won with a total of ' + computerWins + ' wins!')
+    container = document.getElementById('container')
+    message = document.createElement('p')
+
+    playerWins = document.getElementById('playerWins')
+    computerWins = document.getElementById('computerWins')
+
+    if(outcome==='win'){
+        message.textContent = ('The player won!')
+        playerWins.textContent = playerWins.textContent.slice(0,14) + (parseInt(playerWins.textContent.slice(14)) + 1)
+    }
+    else if(outcome==='lose'){
+        message.textContent = ('The computer won!')
+        computerWins.textContent = computerWins.textContent.slice(0,16) + (parseInt(computerWins.textContent.slice(16)) + 1)
+
+    }
     else  
-        return('Tie game with ' + playerWins + ' win each!')
+        message.textContent = ('Tie game!')
+
+    container.appendChild(message)
 }
 
 
@@ -77,30 +94,35 @@ function chooseWinner(playerWins, computerWins){
 * the winner after games are over and returns a string
 * with the winner.
 */
-function game(){
+function game(buttonChosen){
     let playerWins = 0
     let computerWins = 0
 
-    for (let i = 0; i < 5; i++){
-        const computerChoice = computerPlay();
-        const playerChoice = prompt('Choose Rock, Paper, or Scissors:');
-
-        outcome = playRound(playerChoice, computerChoice)
-
-        switch(outcome) {
-            case 'win':
-                playerWins++;
-                break;
-            case 'lose':
-                computerWins++;
-                break;
-        }
+    container = document.getElementById('container')
+    while(container.firstChild){
+        container.removeChild(container.firstChild)
     }
 
-    return(chooseWinner(playerWins,computerWins))
- 
+    const computerChoice = computerPlay();
+    const playerChoice = buttonChosen;
+    outcome = playRound(playerChoice, computerChoice)
+        
+    chooseWinner(outcome)
 }
 
 
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
 
-console.log(game())
+rock.addEventListener('click', function (e){
+    setTimeout(() => (game(e.target.id)), 500)
+})
+
+paper.addEventListener('click', function (e){
+    setTimeout(() => (game(e.target.id)), 500)
+})
+
+scissors.addEventListener('click', function (e) {
+    setTimeout(() => (game(e.target.id)), 500)
+})
