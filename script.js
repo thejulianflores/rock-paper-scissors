@@ -16,11 +16,12 @@ function computerPlay(){
 */
 function playRound(player, computer){
 
-    container = document.getElementById('container');
+    gameText = document.getElementById('game-text');
     message = document.createElement('p')
-    message.textContent = ('Player chose ' + player + ' and computer chose ' + computer)
+    message.classList.add('choices')
+    message.textContent = ('Player chose ' + player + ' and computer chose ' + computer.toLowerCase())
 
-    container.appendChild(message)
+    gameText.appendChild(message)
 
     if(player==='rock'){                // if the player chose ROCK
         if(computer==='Rock'){
@@ -66,25 +67,26 @@ function playRound(player, computer){
 */
 function chooseWinner(outcome){
 
-    container = document.getElementById('container')
+    gameText = document.getElementById('game-text')
     message = document.createElement('p')
+    message.classList.add('outcome')
 
     playerWins = document.getElementById('playerWins')
     computerWins = document.getElementById('computerWins')
 
     if(outcome==='win'){
         message.textContent = ('The player won!')
-        playerWins.textContent = playerWins.textContent.slice(0,14) + (parseInt(playerWins.textContent.slice(14)) + 1)
+        playerWins.textContent = (parseInt(playerWins.textContent) + 1)
     }
     else if(outcome==='lose'){
         message.textContent = ('The computer won!')
-        computerWins.textContent = computerWins.textContent.slice(0,16) + (parseInt(computerWins.textContent.slice(16)) + 1)
+        computerWins.textContent = (parseInt(computerWins.textContent) + 1)
 
     }
     else  
         message.textContent = ('Tie game!')
 
-    container.appendChild(message)
+    gameText.appendChild(message)
 }
 
 
@@ -98,9 +100,9 @@ function game(buttonChosen){
     let playerWins = 0
     let computerWins = 0
 
-    container = document.getElementById('container')
-    while(container.firstChild){
-        container.removeChild(container.firstChild)
+    gameText = document.getElementById('game-text')
+    while(gameText.firstChild){
+        gameText.removeChild(gameText.firstChild)
     }
 
     const computerChoice = computerPlay();
