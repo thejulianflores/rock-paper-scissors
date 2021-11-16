@@ -45,6 +45,14 @@ button {
     margin:10px;
 }
 
+.reset{
+    background-color: whitesmoke;
+    margin-top:15px;
+    width:100px;
+    border:2px solid black;
+    border-radius: 9px;
+}
+
 #rock{
     background-image:url("img/rock.png");
     background-size: 300%;
@@ -92,8 +100,9 @@ button {
 }
 
 #game-container{
+    padding-top:40px;
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
